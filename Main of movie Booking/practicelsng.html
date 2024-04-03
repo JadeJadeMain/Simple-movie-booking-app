@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: verdana;
+            color: cyan;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            
+        }
+
+        .form{
+            width: fit-content;
+            background-color: rgb(255 255 255/ 10%);
+            box-shadow: 0 0 10px rgb(0 0 0 / 15%);
+            backdrop-filter: blur(40px);
+            height: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 100px 200px;
+            row-gap: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .form #name, .form #user-password{
+            box-shadow: 10px 15px 30px 1px rgba(0, 225, 225, .4);
+        }
+        .form button{
+            padding: 10px 30px;
+            background-color: aquamarine;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .form input{
+            padding: 7px;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+        }
+
+        .form .ball{
+            width: 8px;
+            height: 8px;
+            background-color: yellow;
+            border-radius: 50%;
+        }
+
+        .ball{
+            position: absolute;
+            left: 10px;
+           
+            animation: ani1 .4s ease-in  infinite alternate-reverse;
+        }
+
+        .ball1{
+            position: absolute;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            border-radius: 50%;
+            animation: ani2 .1s ease-in infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes ani1{
+            from{box-shadow: 0px 0px 10px 10px yellow;}
+            to{ box-shadow: 0px 0px 50px 40px;}
+        }
+
+
+        @keyframes ani2{
+            30%{transform: rotate(100deg); color: pink;}
+            60%{transform: rotate(200deg); color: violet}
+            100%{transform: rotate(360deg); color: green;}
+        }
+        .form span> span{
+            background-color: red;
+        }
+
+        h2{
+            position: absolute;
+            right: 0;
+            width: 100%;
+            top: 30px;
+            text-align: center;
+            background-color: transparent;
+            z-index: 10; 
+            
+        }
+
+        .output{
+            width: 400px;
+            height: 120px;
+            background-color: grey;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            row-gap: 10px;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            
+        }
+        
+        .output .user, .output .pass{
+            width: 100%;
+        }
+
+        button{
+            color: black;
+            background-color: white;
+            padding: 5px;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            background-color: darkgrey;
+        }
+
+        button:hover{
+            background-color: blue;
+            color: coral;
+        }
+
+        .output .white{
+            background-color: white;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div class="form">
+        <h2>Form</h2>
+        <input id="name" type="text" placeholder="Enter name" required>
+        <input id="user-password" type="password" placeholder="Password" required>
+        <button id="pass" onclick="play()">Log In</button>
+        <span class="ball"></span><span class="ball1">jade</span>
+    </div>
+<hr style="border: 2px solid red; width: 100%;">
+    <div class="output">
+        <span class="user" id="username" >Username: </span>
+        <span class="pass" id="password">Passwords: </span>
+
+        <button onclick="theme()">Darkgrey Theme</button>
+        <button class="white" onclick="theme1()">White Theme</button>
+
+    </div>
+
+
+    <script>
+
+        
+        
+
+        function play(){
+            let name = document.getElementById('name').value;
+
+            let pass = document.getElementById('user-password').value;
+            console.log(pass);
+
+            document.getElementById('username').innerHTML = `Username: ${name}`;
+
+            document.getElementById('password').innerHTML = `Passwords: ${pass}`;
+
+            if(name=== "Jade Formentera" && pass === "jade"){
+               document.querySelector('.form').innerHTML = `WELCOME ${name}!`;
+            }else if(name!= "Jade Formentera" && pass != "jade"){
+                document.querySelector('.form').innerHTML = "Unable to Log In Invalid Passwods and Username";
+                document.querySelector('.form').style.color= "red";
+            }
+            else if(name != "Jade Formentera" || name === ""){
+                document.getElementById('name').style.borderBottom="4px solid red";
+                alert('Invalid username!');
+            }else if(pass != "jade" || pass === null){
+                document.getElementById('user-password').style.borderBottom="4px solid red";
+               document.getElementById('username').innerHTML = `Username: ${pass} invalid password!`
+               document.getElementById('username').style.color="red";
+            }
+            
+            else if(name!= "Jade Formentera" && pass != "jade"){
+                document.querySelector('.form').innerHTML = "Unable to Log In";
+                document.querySelector('.form').style.color= "red";
+            }
+        }
+
+        function theme(){
+            document.querySelector('body').style.backgroundColor="grey";
+            document.querySelector('.form').style.backgroundColor ="purple";
+            document.querySelector('.output').style.backgroundColor= "cyan";
+        }
+
+        function theme1(){
+            document.querySelector('body').style.backgroundColor="white";
+            document.querySelector('.form').style.backgroundColor ="purple";
+            document.querySelector('.output').style.backgroundColor ="coral";
+        }
+    </script>
+</body>
+</html>

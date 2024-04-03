@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../receipt/receipt.js">
+    <link rel="stylesheet" href="../receipt/">
+</head>
+<body>
+    <div class="movie-container">
+        <label>Select Movie</label>
+            <select id="movie"> 
+                <option value="300">Venom (300)</option>
+                <option value="500">SpiderMan (500)</option>
+                <option value="1000">Adverger Endgame (1000)</option>
+            </select>
+        </div> 
+        <ul class="showcase">
+            <li>
+                <div class="seat"></div>
+                <small>N/A</small>
+            </li>
+
+            <li>
+                <div class="seat Selected"></div>
+                <small>Selected</small>
+            </li>
+
+            <li>
+                <div class="seat Occupied"></div>
+                <small>Occupied</small>
+            </li>
+        </ul>
+
+        <div class="container">
+            <div class="screen"></div>
+            
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat Occupied"></div>
+            </div>
+
+            <div class="row">
+                
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+
+            <div class="row">
+                
+                <div class="seat Occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+
+            <div class="row">
+               
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat Occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+
+            <div class="row">
+                
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+
+            <div class="row">
+                
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat Occupied"></div>
+            </div>
+
+        </div>
+     
+
+        <p class="text">You have Selected <span id="count">0</span> seats for a price of <span id="total">0</span></p>
+        
+            <p class=" btnprint">Print Receipt</p>
+
+ 
+</body>
+
+<script src="script.js"></script>
+
+</html>
